@@ -1,10 +1,10 @@
 # Conflict-Free Kubectl aliases - forked from alaa/kubectl-aliases
 
 ## How To Install
-- Place the kubectl.plugin.zsh in `$ZSH_CUSTOM/plugins/kubectl`
-- Add `kubectl` to the list of ZSH Plugins in `~/.zshrc` file.
+- Clone repo to whatever local directory you prefer.
+- Create a symlink from the local dir to the ZSH_CUSTOM path by using `ln -s "$(pwd)/kubectl-aliases" $ZSH_CUSTOM/plugins`
+- Modify the plugins list in the `~/.zshrc` file and add `kubectl-aliases`. This list is space separated.
 - Reload ZSH using with `source $ZSH/oh-my-zsh.sh` or start a new terminal session.
-- Alternatively, you can store the file in another working directory and use `mkdir -p $ZSH_CUSTOM/plugins/kubectl && ln -s /path/to/kubectl.plugin.zsh $ZSH_CUSTOM/plugins/kubectl` to keep the file more easily available for updating as not all references are included here.
 
 ## Command Reference _(May be out of date - check plugin file for most up to date)_
 <details>
