@@ -7,7 +7,9 @@
 - Alternatively, you can store the file in another working directory and use `mkdir -p $ZSH_CUSTOM/plugins/kubectl && ln -s /path/to/kubectl.plugin.zsh $ZSH_CUSTOM/plugins/kubectl` to keep the file more easily available for updating as not all references are included here.
 
 ## Command Reference _(May be out of date - check plugin file for most up to date)_
-
+<details>
+  <summary>Expand</summary>
+  
 ```
 alias kgcr='kubectl get clusterrole'
 alias kgcrw='kubectl get clusterrole --watch'
@@ -419,3 +421,4 @@ alias ktp='kubectl top pod'
 alias ktn='kubectl top node'
 
 ```
+</details>
