@@ -342,6 +342,9 @@ alias kggn='kubectl get gateways.networking.istio.io --namespace'
 alias kggnw='kubectl get gateways.networking.istio.io --watch --namespace'
 alias kgga='kubectl get gateways.networking.istio.io --all-namespaces'
 alias kggaw='kubectl get gateways.networking.istio.io --all-namespaces --watch'
+alias kgdr='kubectl get destinationrules.networking.istio.io'
+alias kddr='kubectl describe destinationrules.networking.istio.io'
+
 #
 # Network Policies, Endpoints,
 #
