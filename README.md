@@ -6,11 +6,17 @@
 - Modify the plugins list in the `~/.zshrc` file and add `kubectl-aliases`. This list is space separated.
 - Reload ZSH using with `source $ZSH/oh-my-zsh.sh` or start a new terminal session.
 
+__Note: Alternatively, if you don't wish to use this as a plugin or do not use ZSH, you can copy the list of aliases below and paste them into your shell config file (`~/.bashrc` or similar)__
+
 ## Command Reference _(May be out of date - check plugin file for most up to date)_
 <details>
   <summary>Expand</summary>
   
 ```
+alias k=kubectl
+#
+# Cluster Roles and Cluster Role Bindings
+#
 alias kgcr='kubectl get clusterrole'
 alias kgcrw='kubectl get clusterrole --watch'
 alias kecr='kubectl edit clusterrole'
@@ -21,6 +27,9 @@ alias kgcrbw='kubectl get clusterrolebinding --watch'
 alias kecrb='kubectl edit clusterrolebinding'
 alias kdcrb='kubectl describe clusterrolebinding'
 alias kdelcrb='kubectl delete clusterrolebinding'
+#
+# Jobs and Cronjobs
+#
 alias kgcj='kubectl get cronjob'
 alias kgcjw='kubectl get cronjob --watch'
 alias kgcjn='kubectl get cronjob --namespace'
@@ -45,6 +54,9 @@ alias kdj='kubectl describe job'
 alias kdjn='kubectl describe job --namespace'
 alias kdelj='kubectl delete job'
 alias kdeljn='kubectl delete job --namespace'
+#
+# Daemon Sets
+#
 alias kgds='kubectl get daemonset'
 alias kgdsw='kubectl get daemonset --watch'
 alias kgdsn='kubectl get daemonset --namespace'
@@ -57,23 +69,9 @@ alias kdds='kubectl describe daemonset'
 alias kddsn='kubectl describe daemonset --namespace'
 alias kdelds='kubectl delete daemonset'
 alias kdeldsn='kubectl delete daemonset --namespace'
-alias kgpdb='kubectl get poddisruptionbudget'
-alias kgpdbw='kubectl get poddisruptionbudget --watch'
-alias kgpdbn='kubectl get poddisruptionbudget --namespace'
-alias kgpdbnw='kubectl get poddisruptionbudget --watch --namespace'
-alias kgpdba='kubectl get poddisruptionbudget --all-namespaces'
-alias kgpdbaw='kubectl get poddisruptionbudget --all-namespaces --watch'
-alias kepdb='kubectl edit poddisruptionbudget'
-alias kepdbn='kubectl edit poddisruptionbudget --namespace'
-alias kdpdb='kubectl describe poddisruptionbudget'
-alias kdpdbn='kubectl describe poddisruptionbudget --namespace'
-alias kdelpdb='kubectl delete poddisruptionbudget'
-alias kdelpdbn='kubectl delete poddisruptionbudget --namespace'
-alias kgpc='kubectl get priorityclass'
-alias kgpcw='kubectl get priorityclass --watch'
-alias kepc='kubectl edit priorityclass'
-alias kdpc='kubectl describe priorityclass'
-alias kdelpc='kubectl delete priorityclass'
+#
+# Roles and Rolebindings
+#
 alias kgr='kubectl get role'
 alias kgrw='kubectl get role --watch'
 alias kgrn='kubectl get role --namespace'
@@ -98,6 +96,9 @@ alias kdrb='kubectl describe rolebinding'
 alias kdrbn='kubectl describe rolebinding --namespace'
 alias kdelrb='kubectl delete rolebinding'
 alias kdelrbn='kubectl delete rolebinding --namespace'
+#
+# Pods, Pod Templates, Pod Disruption Budgets, Pod Security Policy
+# 
 alias kgp='kubectl get pod'
 alias kgpw='kubectl get pod --watch'
 alias kgpn='kubectl get pod --namespace'
@@ -110,6 +111,38 @@ alias kdp='kubectl describe pod'
 alias kdpn='kubectl describe pod --namespace'
 alias kdelp='kubectl delete pod'
 alias kdelpn='kubectl delete pod --namespace'
+alias kgpt='kubectl get podtemplate'
+alias kgptw='kubectl get podtemplate --watch'
+alias kgptn='kubectl get podtemplate --namespace'
+alias kgptnw='kubectl get podtemplate --watch --namespace'
+alias kgpta='kubectl get podtemplate --all-namespaces'
+alias kgptaw='kubectl get podtemplate --all-namespaces --watch'
+alias kept='kubectl edit podtemplate'
+alias keptn='kubectl edit podtemplate --namespace'
+alias kdpt='kubectl describe podtemplate'
+alias kdptn='kubectl describe podtemplate --namespace'
+alias kdelpt='kubectl delete podtemplate'
+alias kdelptn='kubectl delete podtemplate --namespace'
+alias kgpdb='kubectl get poddisruptionbudget'
+alias kgpdbw='kubectl get poddisruptionbudget --watch'
+alias kgpdbn='kubectl get poddisruptionbudget --namespace'
+alias kgpdbnw='kubectl get poddisruptionbudget --watch --namespace'
+alias kgpdba='kubectl get poddisruptionbudget --all-namespaces'
+alias kgpdbaw='kubectl get poddisruptionbudget --all-namespaces --watch'
+alias kepdb='kubectl edit poddisruptionbudget'
+alias kepdbn='kubectl edit poddisruptionbudget --namespace'
+alias kdpdb='kubectl describe poddisruptionbudget'
+alias kdpdbn='kubectl describe poddisruptionbudget --namespace'
+alias kdelpdb='kubectl delete poddisruptionbudget'
+alias kdelpdbn='kubectl delete poddisruptionbudget --namespace'
+alias kgpsp='kubectl get podsecuritypolicy'
+alias kgpspw='kubectl get podsecuritypolicy --watch'
+alias kepsp='kubectl edit podsecuritypolicy'
+alias kdpsp='kubectl describe podsecuritypolicy'
+alias kdelpsp='kubectl delete podsecuritypolicy'
+#
+# Deployments, Stateful Sets, Replica Sets, HPA
+#
 alias kgd='kubectl get deployment'
 alias kgdw='kubectl get deployment --watch'
 alias kgdn='kubectl get deployment --namespace'
@@ -134,6 +167,33 @@ alias kdss='kubectl describe statefulset'
 alias kdssn='kubectl describe statefulset --namespace'
 alias kdelss='kubectl delete statefulset'
 alias kdelssn='kubectl delete statefulset --namespace'
+alias kgrs='kubectl get replicaset'
+alias kgrsw='kubectl get replicaset --watch'
+alias kgrsn='kubectl get replicaset --namespace'
+alias kgrsnw='kubectl get replicaset --watch --namespace'
+alias kgrsa='kubectl get replicaset --all-namespaces'
+alias kgrsaw='kubectl get replicaset --all-namespaces --watch'
+alias kers='kubectl edit replicaset'
+alias kersn='kubectl edit replicaset --namespace'
+alias kdrs='kubectl describe replicaset'
+alias kdrsn='kubectl describe replicaset --namespace'
+alias kdelrs='kubectl delete replicaset'
+alias kdelrsn='kubectl delete replicaset --namespace'
+alias kghpa='kubectl get horizontalpodautoscaler'
+alias kghpaw='kubectl get horizontalpodautoscaler --watch'
+alias kghpan='kubectl get horizontalpodautoscaler --namespace'
+alias kghpanw='kubectl get horizontalpodautoscaler --watch --namespace'
+alias kghpaa='kubectl get horizontalpodautoscaler --all-namespaces'
+alias kghpaaw='kubectl get horizontalpodautoscaler --all-namespaces --watch'
+alias kehpa='kubectl edit horizontalpodautoscaler'
+alias kehpan='kubectl edit horizontalpodautoscaler --namespace'
+alias kdhpa='kubectl describe horizontalpodautoscaler'
+alias kdhpan='kubectl describe horizontalpodautoscaler --namespace'
+alias kdelhpa='kubectl delete horizontalpodautoscaler'
+alias kdelhpan='kubectl delete horizontalpodautoscaler --namespace'
+#
+# Storage
+#
 alias kgpvc='kubectl get persistentvolumeclaim'
 alias kgpvcw='kubectl get persistentvolumeclaim --watch'
 alias kgpvcn='kubectl get persistentvolumeclaim --namespace'
@@ -151,6 +211,14 @@ alias kgpvw='kubectl get persistentvolume --watch'
 alias kepv='kubectl edit persistentvolume'
 alias kdpv='kubectl describe persistentvolume'
 alias kdelpv='kubectl delete persistentvolume'
+alias kgsc='kubectl get storageclass'
+alias kgscw='kubectl get storageclass --watch'
+alias kesc='kubectl edit storageclass'
+alias kdsc='kubectl describe storageclass'
+alias kdelsc='kubectl delete storageclass'
+#
+# Ingress and Services
+#
 alias kgi='kubectl get ingress'
 alias kgiw='kubectl get ingress --watch'
 alias kgin='kubectl get ingress --namespace'
@@ -175,11 +243,9 @@ alias kdsvc='kubectl describe service'
 alias kdsvcn='kubectl describe service --namespace'
 alias kdelsvc='kubectl delete service'
 alias kdelsvcn='kubectl delete service --namespace'
-alias kgsc='kubectl get storageclass'
-alias kgscw='kubectl get storageclass --watch'
-alias kesc='kubectl edit storageclass'
-alias kdsc='kubectl describe storageclass'
-alias kdelsc='kubectl delete storageclass'
+#
+# Secrets and Config Maps
+#
 alias kgsec='kubectl get secret'
 alias kgsecw='kubectl get secret --watch'
 alias kgsecn='kubectl get secret --namespace'
@@ -204,6 +270,9 @@ alias kdcm='kubectl describe configmap'
 alias kdcmn='kubectl describe configmap --namespace'
 alias kdelcm='kubectl delete configmap'
 alias kdelcmn='kubectl delete configmap --namespace'
+#
+# Service Accounts
+#
 alias kgsa='kubectl get serviceaccount'
 alias kgsaw='kubectl get serviceaccount --watch'
 alias kgsan='kubectl get serviceaccount --namespace'
@@ -216,6 +285,9 @@ alias kdsa='kubectl describe serviceaccount'
 alias kdsan='kubectl describe serviceaccount --namespace'
 alias kdelsa='kubectl delete serviceaccount'
 alias kdelsan='kubectl delete serviceaccount --namespace'
+#
+# Nodes, Events, Namespaces
+#
 alias kgno='kubectl get node'
 alias kgnow='kubectl get node --watch'
 alias keno='kubectl edit node'
@@ -223,57 +295,38 @@ alias kdno='kubectl describe node'
 alias kdelno='kubectl delete node'
 alias kgev='kubectl get event'
 alias kgevw='kubectl get event --watch'
+alias kgns='kubectl get namespace'
+alias kgnsw='kubectl get namespace --watch'
+alias kens='kubectl edit namespace'
+alias kdns='kubectl describe namespace'
+alias kdelns='kubectl delete namespace'
+#
+# Certificates and Security
+#
 alias kgcsr='kubectl get certificatesigningrequest'
 alias kgcsrw='kubectl get certificatesigningrequest --watch'
 alias kecsr='kubectl edit certificatesigningrequest'
 alias kdcsr='kubectl describe certificatesigningrequest'
 alias kdelcsr='kubectl delete certificatesigningrequest'
-alias kghpa='kubectl get horizontalpodautoscaler'
-alias kghpaw='kubectl get horizontalpodautoscaler --watch'
-alias kghpan='kubectl get horizontalpodautoscaler --namespace'
-alias kghpanw='kubectl get horizontalpodautoscaler --watch --namespace'
-alias kghpaa='kubectl get horizontalpodautoscaler --all-namespaces'
-alias kghpaaw='kubectl get horizontalpodautoscaler --all-namespaces --watch'
-alias kehpa='kubectl edit horizontalpodautoscaler'
-alias kehpan='kubectl edit horizontalpodautoscaler --namespace'
-alias kdhpa='kubectl describe horizontalpodautoscaler'
-alias kdhpan='kubectl describe horizontalpodautoscaler --namespace'
-alias kdelhpa='kubectl delete horizontalpodautoscaler'
-alias kdelhpan='kubectl delete horizontalpodautoscaler --namespace'
-alias kgpsp='kubectl get podsecuritypolicy'
-alias kgpspw='kubectl get podsecuritypolicy --watch'
-alias kepsp='kubectl edit podsecuritypolicy'
-alias kdpsp='kubectl describe podsecuritypolicy'
-alias kdelpsp='kubectl delete podsecuritypolicy'
-alias kgpt='kubectl get podtemplate'
-alias kgptw='kubectl get podtemplate --watch'
-alias kgptn='kubectl get podtemplate --namespace'
-alias kgptnw='kubectl get podtemplate --watch --namespace'
-alias kgpta='kubectl get podtemplate --all-namespaces'
-alias kgptaw='kubectl get podtemplate --all-namespaces --watch'
-alias kept='kubectl edit podtemplate'
-alias keptn='kubectl edit podtemplate --namespace'
-alias kdpt='kubectl describe podtemplate'
-alias kdptn='kubectl describe podtemplate --namespace'
-alias kdelpt='kubectl delete podtemplate'
-alias kdelptn='kubectl delete podtemplate --namespace'
-alias kgcs='kubectl get componentstatus'
-alias kgcsw='kubectl get componentstatus --watch'
-alias kecs='kubectl edit componentstatus'
-alias kdcs='kubectl describe componentstatus'
-alias kdelcs='kubectl delete componentstatus'
-alias kgrs='kubectl get replicaset'
-alias kgrsw='kubectl get replicaset --watch'
-alias kgrsn='kubectl get replicaset --namespace'
-alias kgrsnw='kubectl get replicaset --watch --namespace'
-alias kgrsa='kubectl get replicaset --all-namespaces'
-alias kgrsaw='kubectl get replicaset --all-namespaces --watch'
-alias kers='kubectl edit replicaset'
-alias kersn='kubectl edit replicaset --namespace'
-alias kdrs='kubectl describe replicaset'
-alias kdrsn='kubectl describe replicaset --namespace'
-alias kdelrs='kubectl delete replicaset'
-alias kdelrsn='kubectl delete replicaset --namespace'
+#
+# Istio Virtual Servicxes, Gateways, and Destination Rules
+#
+alias kgvs='kubectl get virtualservices.networking.istio.io'
+alias kgvsw='kubectl get virtualservices.networking.istio.io --watch'
+alias kgvsn='kubectl get virtualservices.networking.istio.io --namespace'
+alias kgvsnw='kubectl get virtualservices.networking.istio.io --watch --namespace'
+alias kgvsa='kubectl get virtualservices.networking.istio.io --all-namespaces'
+alias kgvsaw='kubectl get virtualservices.networking.istio.io --all-namespaces --watch'
+alias kdvs='kubectl describe virtualservices.networking.istio.io'
+alias kgg='kubectl get gateways.networking.istio.io'
+alias kggw='kubectl get gateways.networking.istio.io --watch'
+alias kggn='kubectl get gateways.networking.istio.io --namespace'
+alias kggnw='kubectl get gateways.networking.istio.io --watch --namespace'
+alias kgga='kubectl get gateways.networking.istio.io --all-namespaces'
+alias kggaw='kubectl get gateways.networking.istio.io --all-namespaces --watch'
+#
+# Network Policies, Endpoints,
+#
 alias kgep='kubectl get endpoints'
 alias kgepw='kubectl get endpoints --watch'
 alias kgepn='kubectl get endpoints --namespace'
@@ -286,11 +339,25 @@ alias kdep='kubectl describe endpoints'
 alias kdepn='kubectl describe endpoints --namespace'
 alias kdelep='kubectl delete endpoints'
 alias kdelepn='kubectl delete endpoints --namespace'
-alias kgns='kubectl get namespace'
-alias kgnsw='kubectl get namespace --watch'
-alias kens='kubectl edit namespace'
-alias kdns='kubectl describe namespace'
-alias kdelns='kubectl delete namespace'
+alias kgnp='kubectl get networkpolicy'
+alias kgnpw='kubectl get networkpolicy --watch'
+alias kgnpn='kubectl get networkpolicy --namespace'
+alias kgnpnw='kubectl get networkpolicy --watch --namespace'
+alias kgnpa='kubectl get networkpolicy --all-namespaces'
+alias kgnpaw='kubectl get networkpolicy --all-namespaces --watch'
+alias kenp='kubectl edit networkpolicy'
+alias kenpn='kubectl edit networkpolicy --namespace'
+alias kdnp='kubectl describe networkpolicy'
+alias kdnpn='kubectl describe networkpolicy --namespace'
+alias kdelnp='kubectl delete networkpolicy'
+alias kdelnpn='kubectl delete networkpolicy --namespace'
+
+
+alias kgcs='kubectl get componentstatus'
+alias kgcsw='kubectl get componentstatus --watch'
+alias kecs='kubectl edit componentstatus'
+alias kdcs='kubectl describe componentstatus'
+alias kdelcs='kubectl delete componentstatus'
 alias kgrc='kubectl get replicationcontroller'
 alias kgrcw='kubectl get replicationcontroller --watch'
 alias kgrcn='kubectl get replicationcontroller --namespace'
@@ -315,18 +382,9 @@ alias kdcrev='kubectl describe controllerrevision'
 alias kdcrevn='kubectl describe controllerrevision --namespace'
 alias kdelcrev='kubectl delete controllerrevision'
 alias kdelcrevn='kubectl delete controllerrevision --namespace'
-alias kgnp='kubectl get networkpolicy'
-alias kgnpw='kubectl get networkpolicy --watch'
-alias kgnpn='kubectl get networkpolicy --namespace'
-alias kgnpnw='kubectl get networkpolicy --watch --namespace'
-alias kgnpa='kubectl get networkpolicy --all-namespaces'
-alias kgnpaw='kubectl get networkpolicy --all-namespaces --watch'
-alias kenp='kubectl edit networkpolicy'
-alias kenpn='kubectl edit networkpolicy --namespace'
-alias kdnp='kubectl describe networkpolicy'
-alias kdnpn='kubectl describe networkpolicy --namespace'
-alias kdelnp='kubectl delete networkpolicy'
-alias kdelnpn='kubectl delete networkpolicy --namespace'
+#
+# Resource Management
+#
 alias kgli='kubectl get limitrange'
 alias kgliw='kubectl get limitrange --watch'
 alias kglin='kubectl get limitrange --namespace'
@@ -351,39 +409,27 @@ alias kdqu='kubectl describe resourcequota'
 alias kdqun='kubectl describe resourcequota --namespace'
 alias kdelqu='kubectl delete resourcequota'
 alias kdelqun='kubectl delete resourcequota --namespace'
-alias kgmwh='kubectl get mutatingwebhookconfigurations'
-alias kgmwhw='kubectl get mutatingwebhookconfigurations --watch'
-alias kemwh='kubectl edit mutatingwebhookconfigurations'
-alias kdmwh='kubectl describe mutatingwebhookconfigurations'
-alias kdelmwh='kubectl delete mutatingwebhookconfigurations'
-alias kgvwh='kubectl get validatingwebhookconfigurations'
-alias kgvwhw='kubectl get validatingwebhookconfigurations --watch'
-alias kevwh='kubectl edit validatingwebhookconfigurations'
-alias kdvwh='kubectl describe validatingwebhookconfigurations'
-alias kdelvwh='kubectl delete validatingwebhookconfigurations'
+alias ktp='kubectl top pod'
+alias ktn='kubectl top node'
+#
+# APIs and CRDs
+#
 alias kgapi='kubectl get apiservices.apiregistration.k8s.io'
 alias kgapiw='kubectl get apiservices.apiregistration.k8s.io --watch'
 alias kgcrd='kubectl get customresourcedefinitions.apiextensions.k8s.io'
 alias kgcrdw='kubectl get customresourcedefinitions.apiextensions.k8s.io --watch'
-alias kgvs='kubectl get virtualservices.networking.istio.io'
-alias kgvsw='kubectl get virtualservices.networking.istio.io --watch'
-alias kgvsn='kubectl get virtualservices.networking.istio.io --namespace'
-alias kgvsnw='kubectl get virtualservices.networking.istio.io --watch --namespace'
-alias kgvsa='kubectl get virtualservices.networking.istio.io --all-namespaces'
-alias kgvsaw='kubectl get virtualservices.networking.istio.io --all-namespaces --watch'
-alias kgg='kubectl get gateways.networking.istio.io'
-alias kggw='kubectl get gateways.networking.istio.io --watch'
-alias kggn='kubectl get gateways.networking.istio.io --namespace'
-alias kggnw='kubectl get gateways.networking.istio.io --watch --namespace'
-alias kgga='kubectl get gateways.networking.istio.io --all-namespaces'
-alias kggaw='kubectl get gateways.networking.istio.io --all-namespaces --watch'
+#
+# Canaries
+#
 alias kgcan='kubectl get canaries.flagger.app'
 alias kgcanw='kubectl get canaries.flagger.app --watch'
 alias kgcann='kubectl get canaries.flagger.app --namespace'
 alias kgcannw='kubectl get canaries.flagger.app --watch --namespace'
 alias kgcana='kubectl get canaries.flagger.app --all-namespaces'
 alias kgcanaw='kubectl get canaries.flagger.app --all-namespaces --watch'
-
+#
+# Contexts and open-ended commands (used for items not included above)
+#
 alias kcuc='kubectl config use-context'
 alias kcsc='kubectl config set-context'
 alias kcdc='kubectl config delete-context'
@@ -395,19 +441,25 @@ alias kdel='kubectl delete'
 alias kdelf='kubectl delete -f'
 alias kgpl='kgp -l'
 alias kcn='kubectl config set-context $(kubectl config current-context) --namespace'
-
+#
+# Misc kubectl commands
+#
 alias kpf="kubectl port-forward"
 alias kcp='kubectl cp'
 alias kaf='safe_kubectlapply'
 alias keit='kubectl exec -it'
-
+#
+# Rollout Restarts
+#
 alias krh='kubectl rollout history'
 alias kru='kubectl rollout undo'
 alias krsss='kubectl rollout status statefulset'
-
+alias krrsts='kubectl rollout restart sts'
 alias kga='kubectl get all'
 alias kgaa='kubectl get all --all-namespaces'
-
+#
+# Logs
+#
 alias kl='kubectl logs'
 alias kl1h='kubectl logs --since 1h'
 alias kl1m='kubectl logs --since 1m'
@@ -416,9 +468,5 @@ alias klf='kubectl logs -f'
 alias klf1h='kubectl logs --since 1h -f'
 alias klf1m='kubectl logs --since 1m -f'
 alias klf1s='kubectl logs --since 1s -f'
-
-alias ktp='kubectl top pod'
-alias ktn='kubectl top node'
-
 ```
 </details>
