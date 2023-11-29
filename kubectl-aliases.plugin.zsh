@@ -489,5 +489,26 @@ alias klf='kubectl logs -f'
 alias klf1h='kubectl logs --since 1h -f'
 alias klf1m='kubectl logs --since 1m -f'
 alias klf1s='kubectl logs --since 1s -f'
-
-
+#
+# Confluent for Kubernetes (CFK) Objects
+#
+alias kgcl='kubectl get clusterlink.platform.confluent.io'
+alias kdcl='kubectl describe clusterlink.platform.confluent.io'
+alias kgkt='kubectl get kafkatopics.platform.confluent.io'
+alias kdkt='kubectl describe kafkatopics.platform.confluent.io'
+alias kgkrc='kubectl get kafkarestclass.platform.confluent.io'
+alias kdkrc='kubectl describe kafkarestclass.platform.confluent.io'
+alias kgks='kubectl get schema.platform.confluent.io'
+alias kdks='kubectl describe schema.platform.confluent.io'
+alias kgcfrb='kubectl get confluentrolebinding.platform.confluent.io'
+alias kdcfrb='kubectl describe confluentrolebinding.platform.confluent.io'
+alias kgkaf='kubectl get kafka.platform.confluent.io'
+alias kdkaf='kubectl describe kafka.platform.confluent.io'
+alias kgsr='kubectl get schemaregistry.platform.confluent.io'
+alias kdsr='kubectl describe schemaregistry.platform.confluent.io'
+alias kgcon='kubectl get connect.platform.confluent.io'
+alias kdcon='kubectl describe connect.platform.confluent.io'
+alias kgksql='kubectl get ksqldb.platform.confluent.io'
+alias kdksql='kubectl describe ksqldb.platform.confluent.io'
+alias kgzoo='kubectl get zookeeper.platform.confluent.io'
+alias kdzoo='kubectl describe zookeeper.platform.confluent.io'
