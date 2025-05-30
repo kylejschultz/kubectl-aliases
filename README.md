@@ -1,11 +1,7 @@
 # Conflict-Free Kubectl aliases - forked from alaa/kubectl-aliases
 
 ## How To Install
-- Clone this repo to a local directory:
-  ```sh
-  git clone https://github.com/kylejschultz/kubectl-aliases.git ~/.kubectl-aliases-zsh
-  ```
-- Source the plugin in your `.zshrc`:
+- Clone this repo to a local directory and source the plugin in your `.zshrc`:
   ```sh
   source ~/.kubectl-aliases-zsh/kubectl-aliases.plugin.zsh
   ```
