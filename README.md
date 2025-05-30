@@ -1,12 +1,20 @@
 # Conflict-Free Kubectl aliases - forked from alaa/kubectl-aliases
 
 ## How To Install
-- Clone repo to whatever local directory you prefer.
-- Create a symlink from the local dir to the ZSH_CUSTOM path by using `ln -s "$(pwd)/kubectl-aliases" $ZSH_CUSTOM/plugins`
-- Modify the plugins list in the `~/.zshrc` file and add `kubectl-aliases`. This list is space separated.
-- Reload ZSH using with `source $ZSH/oh-my-zsh.sh` or start a new terminal session.
+- Clone this repo to a local directory:
+  ```sh
+  git clone https://github.com/kylejschultz/kubectl-aliases.git ~/.kubectl-aliases-zsh
+  ```
+- Source the plugin in your `.zshrc`:
+  ```sh
+  source ~/.kubectl-aliases-zsh/kubectl-aliases.plugin.zsh
+  ```
+- Reload ZSH with:
+  ```sh
+  source ~/.zshrc
+  ```
 
-__Note: Alternatively, if you don't wish to use this as a plugin or do not use ZSH, you can copy the list of aliases below and paste them into your shell config file (`~/.bashrc` or similar)__
+__Note:__ If you don't use ZSH, you can still copy the alias definitions and paste them into your shell config file (`~/.bashrc`, `~/.config/fish/config.fish`, etc.)
 
 ## Command Reference _(May be out of date - check plugin file for most up to date)_
 <details>
@@ -324,6 +332,8 @@ alias kggn='kubectl get gateways.networking.istio.io --namespace'
 alias kggnw='kubectl get gateways.networking.istio.io --watch --namespace'
 alias kgga='kubectl get gateways.networking.istio.io --all-namespaces'
 alias kggaw='kubectl get gateways.networking.istio.io --all-namespaces --watch'
+alias kgdr='kubectl get destinationrules.networking.istio.io'
+alias kddr='kubectl describe destinationrules.networking.istio.io'
 #
 # Network Policies, Endpoints,
 #
@@ -351,7 +361,6 @@ alias kdnp='kubectl describe networkpolicy'
 alias kdnpn='kubectl describe networkpolicy --namespace'
 alias kdelnp='kubectl delete networkpolicy'
 alias kdelnpn='kubectl delete networkpolicy --namespace'
-
 
 alias kgcs='kubectl get componentstatus'
 alias kgcsw='kubectl get componentstatus --watch'

@@ -1,3 +1,6 @@
+# Ensure cache directory exists before any logic runs
+mkdir -p "${ZSH_CACHE_DIR:-$HOME/.zsh_cache}"
+
 # Confirm command to be executed
 confirm() {
   echo -n "\e[33mDo you want to run $*? [N/yes] \e[m"
@@ -20,7 +23,7 @@ safe_kubectlapply() {
 }
 
 if (( $+commands[kubectl] )); then
-    __KUBECTL_COMPLETION_FILE="${ZSH_CACHE_DIR}/kubectl_completion"
+    __KUBECTL_COMPLETION_FILE="${ZSH_CACHE_DIR:-$HOME/.zsh_cache}/kubectl_completion"
 
     if [[ ! -f $__KUBECTL_COMPLETION_FILE ]]; then
         kubectl completion zsh >! $__KUBECTL_COMPLETION_FILE
