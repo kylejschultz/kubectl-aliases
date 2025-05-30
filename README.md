@@ -19,7 +19,7 @@ __Note:__ If you don't use ZSH, you can still copy the alias definitions and pas
 ## Command Reference _(May be out of date - check plugin file for most up to date)_
 <details>
   <summary>Expand</summary>
-  
+
 ```
 alias k=kubectl
 #
@@ -106,7 +106,7 @@ alias kdelrb='kubectl delete rolebinding'
 alias kdelrbn='kubectl delete rolebinding --namespace'
 #
 # Pods, Pod Templates, Pod Disruption Budgets, Pod Security Policy
-# 
+#
 alias kgp='kubectl get pod'
 alias kgpw='kubectl get pod --watch'
 alias kgpn='kubectl get pod --namespace'

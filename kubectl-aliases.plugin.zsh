@@ -119,7 +119,7 @@ alias kdelrb='kubectl delete rolebinding'
 alias kdelrbn='kubectl delete rolebinding --namespace'
 #
 # Pods, Pod Templates, Pod Disruption Budgets, Pod Security Policy
-# 
+#
 alias kgp='kubectl get pod'
 alias kgpw='kubectl get pod --watch'
 alias kgpn='kubectl get pod --namespace'
